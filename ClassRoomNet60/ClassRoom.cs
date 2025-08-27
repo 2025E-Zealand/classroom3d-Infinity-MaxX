@@ -18,13 +18,25 @@ namespace ClassRoomNet60
         #endregion
 
         #region Constructor
-        public ClassRoom() { }
+        public ClassRoom()
+        {
+            ClassName = "A";
+            StudentList = new List<Student>();
+            SemesterStart = new DateTime(01/01/2000);
+        }
+        public ClassRoom(string className, List<Student> studentList, DateTime semesterStart)
+        {
+            ClassName = className;
+            StudentList = studentList;
+            SemesterStart = semesterStart;
+        }
+
         #endregion
 
         #region Methods
         public override string ToString()
         {
-            return $"";
+            return $"Class Room: {ClassName}\nSemester Start: {SemesterStart}";
         }
         #endregion
     }
