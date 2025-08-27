@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -34,6 +35,24 @@ namespace ClassRoomNet60
         #endregion
 
         #region Methods
+        public void Count()
+        {
+            Dictionary<string, int> dict = new Dictionary<string, int>();
+            dict.Add("Winter", 0);
+            dict.Add("Spring", 0);
+            dict.Add("Summer", 0);
+            dict.Add("Autumn", 0);
+
+            foreach (Student student in StudentList)
+            {
+                dict[student.GetSeasonOfBirth()]++;
+            }
+
+            foreach(var kvp in dict)
+            {
+                Console.WriteLine(kvp);
+            }
+        }
         public override string ToString()
         {
             return $"Class Room: {ClassName}\nSemester Start: {SemesterStart}";
